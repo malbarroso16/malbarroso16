@@ -1,114 +1,91 @@
-# 👋 Hi, I'm Maverick Adrian L. Barroso
+# Hi, I'm Maverick Adrian 👋
 
-**Data Analyst & Data Scientist | Python | SQL | Power BI | ML & Deep Learning** Davao City, Philippines
+**Backend Systems Engineer** · Davao City, Philippines
 
----
-
-## 🚀 About Me
-
-I'm a data-driven problem solver, passionate about turning complex data into actionable insights and building intelligent applications. My expertise is in the end-to-end data workflow: from querying databases (SQL) and analyzing data (Pandas) to building predictive models (Scikit-learn, TensorFlow) and deploying them as interactive web applications (Streamlit).
-
-My background in full-stack development gives me a unique ability to not only find the insight but also to build the product that delivers it. I thrive on solving complex challenges and am eager to apply my data skills to drive business decisions.
+I build production-grade backend systems — REST APIs, real-time WebSocket services, task queues, and CLI-first tools — primarily in Python and TypeScript. I focus on deliberate architecture: every project ships with documented design decisions, Docker Compose orchestration, and a clean API contract.
 
 ---
 
-## 🛠️ Technical Skills
+## 🛠️ Tech Stack
 
-| Category         | Technologies & Skills                                                              |
-| :--------------- | :--------------------------------------------------------------------------------- |
-| **Data Analysis & Machine Learning** | Python, Pandas, NumPy, Scikit-learn, TensorFlow, Keras, Matplotlib, Seaborn |
-| **Spreadsheet & Business Intelligence** | Excel (PivotTables, Statistical Analysis, Data Modeling), Power BI, SQL, PostgreSQL, SQLite |
-| **Web & Deployment Technologies** | Streamlit, Python (Django), Node.js, React, TypeScript |
-| **Tools & Platforms** | Git, GitHub, Docker, Postman, Hugging Face API |
+**Languages:** Python · TypeScript · JavaScript · SQL
 
----
+**Frameworks:** FastAPI · Django · Django REST Framework · NestJS · Express
 
-## 🌟 Achievements
+**Backend & Databases:** PostgreSQL · Redis · MongoDB · TimescaleDB · Prisma · Mongoose · asyncpg · Node.js · REST APIs · WebSockets · Socket.io · Celery · Celery Beat
 
-- 🏆 **ICpEP Regional Programming Competition (Python) 2022** — Champion
+**AI:** Claude API (Anthropic SDK) · Tool Use / Function Calling · Prompt Engineering · YOLOv8
+
+**Tools & DevOps:** Docker · Docker Compose · GitHub Actions CI/CD · Poetry · Zod · Git · Postman
 
 ---
 
-## 👨‍💻 Data Projects
+## 🚧 Backend Projects
 
-I have organized my projects into two main categories: **Data Analysis** (focused on BI, EDA, and statistical analysis) and **Data Science** (focused on machine learning and deployment).
+### [APEX](https://github.com/malbarroso16/apex) — FastAPI · TimescaleDB · NumPy · asyncpg · Textual · Docker
+A real-time F1 telemetry and race strategy engine with a live Textual TUI dashboard.
+- Monte Carlo strategy engine running 10,000 vectorized NumPy simulations per driver, with tire grip decay, safety car modifiers, and pit window analysis
+- TimescaleDB hypertable with auto-compression on `telemetry_points`; async writes via asyncpg without blocking the FastAPI event loop
 
-### 📊 Data Analyst Projects
+### [Logbook](https://github.com/malbarroso16/logbook) — Django · DRF · Celery · Redis · PostgreSQL · GitHub Actions · Docker
+A production-grade personal finance REST API with a Textual TUI client and a full CI/CD pipeline.
+- Advanced Django patterns: `django-simple-history` audit trails, ContentTypes polymorphic tagging, DB-driven Celery Beat recurring schedules, SHA-256 hash-based CSV import deduplication
+- Full GitHub Actions pipeline: ruff · mypy · pytest with 80% coverage gate · Docker image build and push on merge to `main`
 
-### Marketing ROI Analysis
-[GitHub Repo](https://github.com/aDistraction16/Marketing-Campaign-ROI-Analysis)
-- Solved a real-world messy data problem by cleaning and merging a marketing manager's messy Excel file with an internal SQL database
-- Used this hybrid workflow to calculate the true ROAS for paid campaigns, uncovering critical attribution errors
-- Delivered actionable insights, identifying critical attribution errors and **opportunities to improve ROAS by 25%** by re-allocating budget.
+### [TermChat](https://github.com/malbarroso16/termchat) — NestJS · Socket.io · Redis · PostgreSQL · Prisma · Docker
+A Discord-inspired real-time terminal chat app with a NestJS WebSocket gateway and Ink-based CLI client.
+- Redis Pub/Sub for cross-instance Socket.io broadcasting; sliding window rate limiter (INCR/EXPIRE) enforcing 5 msg/s per user
+- Composite index on `(channelId, createdAt)` for message history queries; 8-second grace-period disconnect handler for presence tracking
 
-### Sales Performance Dashboard
-[GitHub Repo](https://github.com/aDistraction16/Sales-Performance-Dashboard)
-- Analyzed sales data to identify key performance drivers using advanced SQL queries and Python
-- Built two versions of the final deliverable: an interactive dashboard in **Power BI** and a comprehensive companion report in **Excel** with PivotTables, Slicers, and charts
-- Provided executive leadership with clear KPIs and trend analysis
-
-### E-commerce Purchase Funnel Analysis
-[GitHub Repo](https://github.com/aDistraction16/E-commerce-Purchase-Funnel-Analysis)
-- Analyzed a user event log dataset to construct a multi-stage purchase funnel
-- Used **Plotly** and **Excel** to visualize conversion rates and identify the single biggest drop-off point in the user journey
-- Identified the single biggest drop-off point, providing a recommendation **projected to improve conversion by 15%**.
-
-### A/B Test Analysis for a Marketing Campaign
-[GitHub Repo](https://github.com/aDistraction16/A-B-Test-Analysis-for-Marketing-Campaign)
-- Performed a statistical analysis to determine if a new landing page had a significant impact on conversion
-- Used a **Chi-Squared Test** to provide a definitive, data-driven recommendation
-- Implemented proper statistical significance testing and confidence intervals
-
-### Movie Ratings Analysis
-[GitHub Repo](https://github.com/aDistraction16/Movie-Ratings-Analysis)
-- Conducted an exploratory analysis on movie data, querying the **TMDB API** with Python
-- Cleaned nested JSON data and engineered financial metrics (Profit, ROI) to find what really makes a movie successful
-- Created comprehensive visualizations showing genre performance and budget optimization strategies
-
-### 🤖 Data Science (ML/DL) Projects
-
-### AI-Assisted Pneumonia Detection
-[GitHub Repo](https://github.com/aDistraction16/AI-Assisted-Pneumonia-Detection)
-- Trained a **Convolutional Neural Network (CNN)** using **TensorFlow/Keras** on a chest X-ray dataset
-- Deployed the final model as an interactive web app using **Streamlit**, where users can upload an image and get real-time predictions
-- Achieved 94% accuracy with proper validation and testing protocols
-
-### Online Retail Customer Segmentation
-[GitHub Repo](https://github.com/aDistraction16/Online-Retail-Customer-Segmentation)
-- Performed **RFM Analysis** (Recency, Frequency, Monetary) to engineer features from a raw SQL database
-- Applied **K-Means Clustering** to segment customers into distinct groups for targeted marketing
-- Delivered customer personas and marketing strategies **designed to increase** customer lifetime value.
-
-### Health Insurance Cost Predictor
-[GitHub Repo](https://github.com/aDistraction16/Health-Insurance-Cost-Predictor)
-- Built and evaluated several regression models (**Linear Regression, Random Forest**) with **Scikit-learn**
-- Accurately predicted patient health insurance costs based on demographic and health data
-- Deployed model as a **Streamlit** web application for real-time cost estimation
+### [AI Recipe Meal Planner](https://github.com/malbarroso16/ai-recipe-planner) — TypeScript · Express · MongoDB · Claude API · Zod · Ink · Docker
+A TypeScript monorepo meal planning app that uses the Claude API to generate, scale, and customize recipes.
+- Forced Claude tool use (`tool_choice`) with Zod schema validation; single structured retry on failure prevents malformed data from reaching the database
+- MongoDB aggregation pipeline (unwind → group by `normalizedName` + `canonicalUnit` → sum) producing a de-duplicated grocery list across any date range
 
 ---
 
-## 💼 Experience
+## 📊 Data Analysis & Data Science Projects
 
-- **PROCESSOR** | Ateneo de Davao University  
-  - Internal Vice President (2021-2022)  
-  - President (2023-2024)
+A collection of end-to-end data projects spanning business intelligence, EDA, statistical analysis, and machine learning — built with Python, SQL, and Power BI.
 
-- **IT Department OJT** | ANFLOCOR (2023)
+### Data Analysis
+
+**[Marketing ROI Analysis](https://github.com/malbarroso16/Marketing-Campaign-ROI-Analysis)** — Python · SQL · Excel
+Cleaned and merged messy Excel and SQL data to calculate true ROAS for paid campaigns, identifying attribution errors and opportunities to improve ROAS by 25%.
+
+**[Sales Performance Dashboard](https://github.com/malbarroso16/Sales-Performance-Dashboard)** — Python · SQL · Power BI · Excel
+Analyzed sales data with advanced SQL and Python, delivering an interactive Power BI dashboard and an Excel companion report with PivotTables and KPI trend analysis.
+
+**[E-commerce Purchase Funnel Analysis](https://github.com/malbarroso16/E-commerce-Purchase-Funnel-Analysis)** — Python · Plotly · Excel
+Constructed a multi-stage purchase funnel from a user event log, identifying the biggest drop-off point and producing a recommendation projected to improve conversion by 15%.
+
+**[A/B Test Analysis for a Marketing Campaign](https://github.com/malbarroso16/A-B-Test-Analysis-for-Marketing-Campaign)** — Python · SciPy
+Applied a Chi-Squared test with proper significance testing and confidence intervals to deliver a definitive, data-driven recommendation on a new landing page.
+
+**[Movie Ratings Analysis](https://github.com/malbarroso16/Movie-Ratings-Analysis)** — Python · TMDB API · Pandas
+Queried the TMDB API, cleaned nested JSON data, and engineered financial metrics (Profit, ROI) to analyze genre performance and budget optimization strategies.
+
+### Machine Learning & Deep Learning
+
+**[AI-Assisted Pneumonia Detection](https://github.com/malbarroso16/AI-Assisted-Pneumonia-Detection)** — TensorFlow · Keras · Streamlit
+Trained a CNN on a chest X-ray dataset achieving 94% accuracy, deployed as an interactive Streamlit web app for real-time predictions.
+
+**[Online Retail Customer Segmentation](https://github.com/malbarroso16/Online-Retail-Customer-Segmentation)** — Python · Scikit-learn · SQL
+Performed RFM analysis on a SQL database, then applied K-Means clustering to segment customers into distinct personas for targeted marketing strategies.
+
+**[Health Insurance Cost Predictor](https://github.com/malbarroso16/Health-Insurance-Cost-Predictor)** — Scikit-learn · Streamlit
+Built and evaluated Linear Regression and Random Forest models to predict insurance costs, deployed as a Streamlit app for real-time estimation.
 
 ---
 
-## 🎓 Education
+## 🎓 Education & Recognition
 
-**Bachelor of Science in Computer Engineering**  
-Ateneo de Davao University (2020–2025) | Davao City, Philippines
-
----
-
-## 🤝 Connect with Me
-
-- 📧 Email: maverickadrianbarroso@gmail.com
-- [LinkedIn](https://www.linkedin.com/in/maverickadrianbarroso/)
-- [GitHub](https://github.com/aDistraction16)
+**B.S. Computer Engineering** — Ateneo de Davao University (2020–2025)
+🏆 ICpEP Regional Programming Competition (Python) 2022 — **Champion**
+**PROCESSOR** — Club President 2023–2024
 
 ---
 
+## 📬 Connect
+
+[LinkedIn](https://www.linkedin.com/in/maverickadrianbarroso/) · [Email](mailto:maverickadrianbarroso@gmail.com)
