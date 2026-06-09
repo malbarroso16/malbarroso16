@@ -1,4 +1,4 @@
-# Hi, I'm Maverick Adrian 👋
+# Hi, I'm Maverick 👋
 
 **Backend Systems Engineer** · Davao City, Philippines
 
