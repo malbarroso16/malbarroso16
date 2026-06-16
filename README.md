@@ -1,80 +1,88 @@
 # Hi, I'm Maverick 👋
 
-**Backend Systems Engineer** · Davao City, Philippines
+**Data Analyst & Data Engineer** · Davao City, Philippines
 
-I build production-grade backend systems — REST APIs, real-time WebSocket services, task queues, and CLI-first tools — primarily in Python and TypeScript. I focus on deliberate architecture: every project ships with documented design decisions, Docker Compose orchestration, and a clean API contract.
+I build end-to-end data solutions — from cleaning and analyzing business data to engineering real-time pipelines and BI dashboards. I focus on work that's complete and deliverable: every project ships with documented findings, reproducible code, and a clear output for stakeholders.
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Languages:** Python · TypeScript · JavaScript · SQL
+**Languages:** Python · SQL · TypeScript · JavaScript
 
-**Frameworks:** FastAPI · Django · Django REST Framework · NestJS · Express
+**Data Analysis & BI:** Pandas · NumPy · Matplotlib · Seaborn · Plotly · Power BI · Looker Studio · Excel
 
-**Backend & Databases:** PostgreSQL · Redis · MongoDB · TimescaleDB · Prisma · Mongoose · asyncpg · Node.js · REST APIs · WebSockets · Socket.io · Celery · Celery Beat
+**Data Engineering:** FastAPI · TimescaleDB · asyncpg · PostgreSQL · SQL Server · SQLite · Docker · Docker Compose · REST APIs
 
-**AI:** Claude API (Anthropic SDK) · Tool Use / Function Calling · Prompt Engineering · YOLOv8
+**Tools & DevOps:** Git · GitHub Actions CI/CD · Poetry · Postman
 
-**Tools & DevOps:** Docker · Docker Compose · GitHub Actions CI/CD · Poetry · Zod · Git · Postman
+**Backend:** Django · DRF · NestJS · Express · Redis · MongoDB · Celery · WebSockets
 
 ---
 
-## 🚧 Backend Projects
+## 📊 Data Analysis Projects
 
-### [APEX](https://github.com/malbarroso16/apex) — FastAPI · TimescaleDB · NumPy · asyncpg · Textual · Docker
-A real-time F1 telemetry and race strategy engine with a live Textual TUI dashboard.
-- Monte Carlo strategy engine running 10,000 vectorized NumPy simulations per driver, with tire grip decay, safety car modifiers, and pit window analysis
-- TimescaleDB hypertable with auto-compression on `telemetry_points`; async writes via asyncpg without blocking the FastAPI event loop
+### [Sales Performance Dashboard](https://github.com/malbarroso16/Sales-Performance-Dashboard) — Python · pandas · Power BI · Excel
+Analyzed 9,800 Superstore sales records to surface performance drivers across regions, categories, and customer segments.
+- Solved a mixed date format problem (MM/DD/YYYY vs DD/MM/YYYY) with a custom conversion function, then built 7 visualizations across regional, category, and customer dimensions
+- Delivered dual stakeholder outputs — an interactive Power BI dashboard and an Excel companion — surfacing that the West region led sales, Technology drove top revenue, and high-value "whale" customers warranted a dedicated VIP strategy
+
+### [Marketing ROI Analysis](https://github.com/malbarroso16/Marketing-Campaign-ROI-Analysis) — Python · pandas · SQLite · matplotlib · seaborn
+Diagnosed an attribution gap in a simulated marketing dataset by merging messy campaign cost data with a Kaggle e-commerce dataset stored in SQLite.
+- Channel-level ROAS appeared healthy at 4–7x, but campaign-level ROAS fell below 1x — revealing an 85% revenue attribution gap
+- Identified 3 loss-making campaigns for immediate pausing and recommended a full attribution system overhaul
+
+### [A/B Test Analysis for a Marketing Campaign](https://github.com/malbarroso16/A-B-Test-Analysis-for-Marketing-Campaign) — Python · SciPy · Excel
+Evaluated whether a new landing page design significantly improved conversion rates across 294,480 balanced users.
+- Applied a Chi-Squared test (p=0.2177, α=0.05) and correctly interpreted a null result — no statistically significant difference between the 12.04% control and 11.89% treatment groups
+- Recommended retaining the current design, avoiding unnecessary implementation costs and risk
+
+---
+
+## ⚙️ Data Engineering Projects
+
+### [APEX](https://github.com/malbarroso16/apex-f1-telemetry) — FastAPI · TimescaleDB · NumPy · asyncpg · Docker
+A real-time F1 telemetry ingestion and race strategy engine with a live Textual TUI dashboard.
+- Ingested real-time telemetry via FastAPI async workers into a TimescaleDB hypertable with auto-compression; non-blocking asyncpg writes kept the event loop free under high throughput
+- Monte Carlo strategy engine running 10,000 vectorized NumPy simulations per driver with exponential tyre decay, safety car modifiers, and clean-air pit window constraints — producing named race recommendations
+
+### [Real-Time Weather Data Pipeline](https://github.com/malbarroso16/Real-Time-Weather-Data-Pipeline-with-Power-BI-Dashboard) — Python · SQL Server · Power BI · REST API
+A complete extract → store → visualize pipeline pulling live weather data for multiple cities.
+- Automated multi-city weather ingestion from the OpenWeatherMap API, storing structured time-stamped records in SQL Server
+- Visualized results in a live Power BI dashboard with current conditions and historical trends
+
+
+---
+
+## 🤖 Data Science Projects
+
+### [AI-Assisted Pneumonia Detection](https://github.com/malbarroso16/AI-Assisted-Pneumonia-Detection) — TensorFlow · Keras · Streamlit
+Trained a CNN on a chest X-ray dataset achieving 94% accuracy; deployed as an interactive Streamlit web app for real-time image-upload predictions.
+
+### [Online Retail Customer Segmentation](https://github.com/malbarroso16/Online-Retail-Customer-Segmentation) — Python · Scikit-learn · SQL
+Performed RFM analysis on a SQL database and applied K-Means clustering to segment customers into distinct personas for targeted marketing strategies.
+
+### [Health Insurance Cost Predictor](https://github.com/malbarroso16/Health-Insurance-Cost-Predictor) — Scikit-learn · Streamlit
+Built and evaluated Linear Regression and Random Forest models to predict insurance costs; deployed as a Streamlit app for real-time estimation.
+
+---
+
+## 🔧 Backend Development Projects
 
 ### [Logbook](https://github.com/malbarroso16/logbook) — Django · DRF · Celery · Redis · PostgreSQL · GitHub Actions · Docker
-A production-grade personal finance REST API with a Textual TUI client and a full CI/CD pipeline.
+A production-grade personal finance REST API with async PDF report generation, a Textual TUI client, and a full CI/CD pipeline.
 - Advanced Django patterns: `django-simple-history` audit trails, ContentTypes polymorphic tagging, DB-driven Celery Beat recurring schedules, SHA-256 hash-based CSV import deduplication
 - Full GitHub Actions pipeline: ruff · mypy · pytest with 80% coverage gate · Docker image build and push on merge to `main`
 
 ### [TermChat](https://github.com/malbarroso16/termchat) — NestJS · Socket.io · Redis · PostgreSQL · Prisma · Docker
 A Discord-inspired real-time terminal chat app with a NestJS WebSocket gateway and Ink-based CLI client.
-- Redis Pub/Sub for cross-instance Socket.io broadcasting; sliding window rate limiter (INCR/EXPIRE) enforcing 5 msg/s per user
+- Redis Pub/Sub for cross-instance Socket.io broadcasting; sliding window rate limiter enforcing 5 msg/s per user
 - Composite index on `(channelId, createdAt)` for message history queries; 8-second grace-period disconnect handler for presence tracking
 
-### [AI Recipe Meal Planner](https://github.com/malbarroso16/ai-recipe-planner) — TypeScript · Express · MongoDB · Claude API · Zod · Ink · Docker
-A TypeScript monorepo meal planning app that uses the Claude API to generate, scale, and customize recipes.
-- Forced Claude tool use (`tool_choice`) with Zod schema validation; single structured retry on failure prevents malformed data from reaching the database
-- MongoDB aggregation pipeline (unwind → group by `normalizedName` + `canonicalUnit` → sum) producing a de-duplicated grocery list across any date range
-
----
-
-## 📊 Data Analysis & Data Science Projects
-
-A collection of end-to-end data projects spanning business intelligence, EDA, statistical analysis, and machine learning — built with Python, SQL, and Power BI.
-
-### Data Analysis
-
-**[Marketing ROI Analysis](https://github.com/malbarroso16/Marketing-Campaign-ROI-Analysis)** — Python · SQL · Excel
-Cleaned and merged messy Excel and SQL data to calculate true ROAS for paid campaigns, identifying attribution errors and opportunities to improve ROAS by 25%.
-
-**[Sales Performance Dashboard](https://github.com/malbarroso16/Sales-Performance-Dashboard)** — Python · SQL · Power BI · Excel
-Analyzed sales data with advanced SQL and Python, delivering an interactive Power BI dashboard and an Excel companion report with PivotTables and KPI trend analysis.
-
-**[E-commerce Purchase Funnel Analysis](https://github.com/malbarroso16/E-commerce-Purchase-Funnel-Analysis)** — Python · Plotly · Excel
-Constructed a multi-stage purchase funnel from a user event log, identifying the biggest drop-off point and producing a recommendation projected to improve conversion by 15%.
-
-**[A/B Test Analysis for a Marketing Campaign](https://github.com/malbarroso16/A-B-Test-Analysis-for-Marketing-Campaign)** — Python · SciPy
-Applied a Chi-Squared test with proper significance testing and confidence intervals to deliver a definitive, data-driven recommendation on a new landing page.
-
-**[Movie Ratings Analysis](https://github.com/malbarroso16/Movie-Ratings-Analysis)** — Python · TMDB API · Pandas
-Queried the TMDB API, cleaned nested JSON data, and engineered financial metrics (Profit, ROI) to analyze genre performance and budget optimization strategies.
-
-### Machine Learning & Deep Learning
-
-**[AI-Assisted Pneumonia Detection](https://github.com/malbarroso16/AI-Assisted-Pneumonia-Detection)** — TensorFlow · Keras · Streamlit
-Trained a CNN on a chest X-ray dataset achieving 94% accuracy, deployed as an interactive Streamlit web app for real-time predictions.
-
-**[Online Retail Customer Segmentation](https://github.com/malbarroso16/Online-Retail-Customer-Segmentation)** — Python · Scikit-learn · SQL
-Performed RFM analysis on a SQL database, then applied K-Means clustering to segment customers into distinct personas for targeted marketing strategies.
-
-**[Health Insurance Cost Predictor](https://github.com/malbarroso16/Health-Insurance-Cost-Predictor)** — Scikit-learn · Streamlit
-Built and evaluated Linear Regression and Random Forest models to predict insurance costs, deployed as a Streamlit app for real-time estimation.
+### [AI Recipe Meal Planner](https://github.com/malbarroso16/ai-recipe-planner) — TypeScript · Express · MongoDB · Claude API · Zod · Docker
+A TypeScript monorepo meal planning app using the Claude API to generate, scale, and customize recipes on demand.
+- Forced Claude tool use with Zod schema validation; single structured retry on failure prevents malformed data from reaching the database
+- MongoDB aggregation pipeline producing a de-duplicated grocery list with combined, by-day, and by-recipe views across any date range
 
 ---
 
